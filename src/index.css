@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #050816;
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Light Theme */
+
+body.light{
+  background:#f8fafc;
+  color:#111827;
+}
+
+body.light section{
+  background:#f8fafc !important;
+}
+
+body.light nav{
+  background:rgba(255,255,255,.85) !important;
+  color:#111827;
+}
+
+body.light footer{
+  background:#ffffff !important;
+}
+
+body.light .bg-white\/5{
+  background:#ffffff;
+  border:1px solid #e5e7eb;
+}
+
+body.light .text-gray-400,
+body.light .text-gray-300,
+body.light .text-white{
+  color:#111827 !important;
+}
