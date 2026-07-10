@@ -18,35 +18,43 @@ export default function Contact() {
     });
   };
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
-
     setLoading(true);
 
-    emailjs
-      .send(
-        "service_ube5fks",
-        "templete_dbcjhgj",
-        form,
-        "rUpfHwUQygWNfujmY"
-      )
-      .then(() => {
-        alert("✅ Message sent successfully!");
+    try {
+      const result = await emailjs.send(
+        "service_ube5fks",          // Your Service ID
+        "template_dbcjhgj",         // <-- Replace with your exact Template ID
+        {
+          from_name: form.from_name,
+          from_email: form.from_email,
+          subject: form.subject,
+          message: form.message,
+        },
+        "rUpfHwUQygWNfujmY"          // Your Public Key
+      );
 
-        setForm({
-          from_name: "",
-          from_email: "",
-          subject: "",
-          message: "",
-        });
+      console.log("Email sent:", result);
 
-        setLoading(false);
-      })
-      .catch(() => {
-        alert("❌ Failed to send message.");
+      alert("✅ Message sent successfully!");
 
-        setLoading(false);
+      setForm({
+        from_name: "",
+        from_email: "",
+        subject: "",
+        message: "",
       });
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+
+      alert(
+        `❌ Failed to send message.
+Error: ${error?.text || error?.message || "Unknown Error"}`
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -78,7 +86,7 @@ export default function Contact() {
               value={form.from_name}
               onChange={handleChange}
               required
-              className="bg-[#111827] p-4 rounded-xl outline-none"
+              className="bg-[#111827] p-4 rounded-xl outline-none text-white"
             />
 
             <input
@@ -88,7 +96,7 @@ export default function Contact() {
               value={form.from_email}
               onChange={handleChange}
               required
-              className="bg-[#111827] p-4 rounded-xl outline-none"
+              className="bg-[#111827] p-4 rounded-xl outline-none text-white"
             />
 
           </div>
@@ -100,7 +108,7 @@ export default function Contact() {
             value={form.subject}
             onChange={handleChange}
             required
-            className="bg-[#111827] p-4 rounded-xl outline-none mt-6 w-full"
+            className="bg-[#111827] p-4 rounded-xl outline-none mt-6 w-full text-white"
           />
 
           <textarea
@@ -110,12 +118,13 @@ export default function Contact() {
             value={form.message}
             onChange={handleChange}
             required
-            className="bg-[#111827] p-4 rounded-xl outline-none mt-6 w-full resize-none"
+            className="bg-[#111827] p-4 rounded-xl outline-none mt-6 w-full resize-none text-white"
           />
 
           <button
             type="submit"
-            className="mt-8 bg-violet-600 hover:bg-violet-700 px-8 py-4 rounded-xl transition"
+            disabled={loading}
+            className="mt-8 bg-violet-600 hover:bg-violet-700 px-8 py-4 rounded-xl transition disabled:opacity-60"
           >
             {loading ? "Sending..." : "Send Message"}
           </button>

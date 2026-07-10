@@ -128,13 +128,6 @@ export default function Projects() {
 
               </div>
 
-              <div className="flex items-center gap-2 text-violet-400 mt-8 group-hover:translate-x-2 transition">
-
-                Explore Project
-
-                <FaArrowRight />
-
-              </div>
 
             </div>
 
