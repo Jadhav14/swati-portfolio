@@ -96,7 +96,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="/resume.pdf"
+              href="/Resume_Swati_Jadhav (1).pdf"
               download
               className="border border-violet-500 hover:bg-violet-600 px-8 py-4 rounded-xl flex items-center gap-3 transition"
             >
