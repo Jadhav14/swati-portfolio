@@ -1,16 +1,7 @@
 import { FaBriefcase } from "react-icons/fa";
 
 const experience = [
-  
-  {
-    company: "Project Coordinator",
-    duration: "2026 - Present",
-    description: [
-      "Coordinating project timelines and client communication.",
-      "Managing project documentation and task tracking.",
-      "Collaborating with development teams for successful delivery.",
-    ],
-  },
+
   {
     company: "Web Developer",
     duration: "2025 - Present",
