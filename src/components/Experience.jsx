@@ -26,7 +26,7 @@ export default function Experience() {
         </h2>
 
         <p className="text-center text-gray-400 mt-5">
-          My professional journey in web development and project coordination.
+          My professional journey in web development.
         </p>
 
         <div className="relative mt-20">
