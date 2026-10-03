@@ -4,7 +4,7 @@ const experience = [
 
   {
     company: "Web Developer",
-    duration: "2025 - Present",
+    duration: "2025 - 2026",
     description: [
       "Developing responsive websites using React, HTML, CSS and JavaScript.",
       "Building reusable UI components.",
