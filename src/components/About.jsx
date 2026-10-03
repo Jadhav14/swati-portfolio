@@ -114,7 +114,7 @@ export default function About() {
             <FaLaptopCode className="text-5xl text-violet-500 mb-5" />
 
             <h3 className="text-5xl font-bold">
-              1
+              1+
             </h3>
 
             <p className="text-gray-400 mt-3">
@@ -134,7 +134,7 @@ export default function About() {
             <FaProjectDiagram className="text-5xl text-cyan-400 mb-5" />
 
             <h3 className="text-5xl font-bold">
-              5+
+              15+
             </h3>
 
             <p className="text-gray-400 mt-3">
